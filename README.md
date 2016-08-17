@@ -65,8 +65,6 @@ The algorithm of interest in is based on the following gaming strategy:
 is what a player would generally use because it is straightforward and
 does not require a lot of planning.
 
-![image](https://raw.githubusercontent.com/gajduk/greedy-tsp/master/optimal_greedy_diff.png)
-
 To find the optimal solution we used an algorithm based on exhaustive
 search. It considers all possible permutations of the collectibles, and
 is thus guaranteed to find the optimal solution. Because the number of
@@ -85,10 +83,6 @@ has to guestimate it, which may result in errors. To capture this, we
 propose the **greedy with error** algorithm which includes the following
 modification to the line 5 in the greedy algorithm
 
-![Average performance of the greedy algorithm compared to the optimal
-solution, for different number of collectibles.<span
-data-label="fig:box_plots"></span>](A1_difference)
-
 where Zeta is an error term from a normal distribution
 $\mathcal{N}(1,\sigma)$ with cutoffs at $0.7$ and $1.3$ to prevent
 unreasonable errors.
@@ -101,25 +95,37 @@ For illustration, the following excerpt from Far Cry 3
 by pitchers.
 
 <div align="center">
+<a id="fig1"/>
 
 <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/tiny%20map.png" width="300px"/>
 
 <p><em>
-<a id="fig1"/>
-An excerpt from the map from Far Cry 3. Pitchers denote the locations
+Figure 1. An excerpt from the map from Far Cry 3. Pitchers denote the locations
 of collectibles
 </a>
 </em></p>
 </div>
 
 Not surprisingly, the performance of the greedy algorithm depends on the
-starting location as shown in Figure \[fig:starting\_location\_dependence\]. In the first case, the route chosen by the greedy algorithm is suboptimal and results in a
-total distance of 3601 (Figa. \[fig:starting\_location\_dependence\]-upper left), opposed to the optimal distance of 2764 (Fig. \[fig:starting\_location\_dependence\]-upper right), which is a
+starting location as shown in Figure [Figure 2](#fig2). In the first case, the route chosen by the greedy algorithm is suboptimal and results in a
+total distance of 3601 ([Fig. 2](#fig2)-upper left), opposed to the optimal distance of 2764 ([Fig. 2](#fig2)-upper right), which is a
 difference of 30.2%. In the second case a different starting location
 is chosen which results in the greedy algorithm finding a solution that
 is much close to the optimal one (2961-2883 or a difference of
 2.4\%), as indicated by the similar routes in the second row of
-Figure\[fig:starting\_location\_dependence\].
+[Figure 2](#fig2).
+
+
+<div align="center">
+<a id="fig2"/>
+
+<img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/tiny_combinirana.png" width="100%"/>
+
+<p><em>
+Figure 2. Rows are different starting positions (red circle). Columns are different algorithms, from left to right: greedy, greedy with error (sigma=0.4) and optimal. Total distances are for the first row 3601-3740-2764; second row 2961-3923-2883. The performance of the greedy algorithm depends on the choice of starting position with the difference being much larger for the first row (30.2\% longer distance compared to the optimal) as compared to the second row (2.4\%). Furthermore the greedy algorithm with error clearly under-performs when compared to the greedy algorithm.
+</a>
+</em></p>
+</div>
 
 Although, this example is intriguing a detailed analysis is needed to
 quantify the performance of the greedy algorithm. To this end the
@@ -132,28 +138,48 @@ This was repeated 1000 times. Note that the actual choice of plane size
 does not influence our results as we are only interested in the relative
 performance of the greedy algorithm as compared to the optimal solution.
 
-![Average performance of the greedy algorithm with error compared to the
-optimal solution, for *N*=10 and different levels of error.<span
-data-label="fig:sigma_diff"></span>](sigma_diff)
 
 We found that the performance of the greedy algorithm deteriorates as
-the number of collectibles $N$ increases (Fig. \[fig:box\_plots\]).
+the number of collectibles $N$ increases ([Fig. 3](#fig3)).
 However, the overall performance was surprisingly good and for eleven
 collectibles *N*=11 it was on average only 7.3\% worse than the
 optimal solution, with upper and lower quartiles at 2.6\% and 13.9\%
 respectively.
 
+<div align="center">
+<a id="fig3"/>
+
+<img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/optimal_greedy_diff.png" width="400px"/>
+
+<p><em>
+Figure 3. Average performance of the greedy algorithm compared to the optimal solution, for different number of collectibles.
+</a>
+</em></p>
+</div>
+
 Next, let us turn our attention to the greedy algorithm with error. This
 algorithm is not only worse than the optimal, but is also, perhaps
 unsurprisingly, worse than the greedy algorithm
-(Fig. \[fig:starting\_location\_dependence\]). Further analysis was
+([Fig. 2](#fig2)). Further analysis was
 performed in order to estimate what effect the level of error in
 guestimating the distance has on the performance of the greedy algorithm
 with error. To this end, the number of collectibles was fixed to $N=10$
 and the variance ($\sigma$) in the error term was varied. As expected,
 higher errors when estimating the distance between two points lead to
 increasingly poor performance up to $16.9\%$ worse than the
-optimal (Fig. \[fig:sigma\_diff\]).
+optimal ([Fig. 4](#fig4)).
+
+
+<div align="center">
+<a id="fig4"/>
+
+<img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/sigma_diff.png" width="400px"/>
+
+<p><em>
+Figure 4. Average performance of the greedy algorithm with error compared to the optimal solution, for N=10 and different levels of error.
+</a>
+</em></p>
+</div>
 
 4 Conclusion
 ==========
@@ -165,7 +191,7 @@ the greedy algorithm is that it can be performed by a player as he or
 she is playing, since no complex computations are required, as opposed
 to exhaustive search which can only be done by a computer. We found that
 the performance of the greedy algorithm is comparable to the optimal
-solution, with only 7.3\% longer distances on average.
+solution, with only 7.3% longer distances on average.
 
 Even when human errors in estimating the distances were included the
 greedy algorithm performed on average less than 16.9\% worse than the
