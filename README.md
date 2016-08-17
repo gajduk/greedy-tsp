@@ -1,7 +1,8 @@
 #How to efficiently gather collectibles in open world games?
----
-abstract: |
-    **Since Pokemon Go sent millions on the quest of collecting virtual
+
+    Andrej Gajduk - email andrej at gajduk.com
+
+    **Abstract - Since Pokemon Go sent millions on the quest of collecting virtual
     monsters an important question has been on the minds of many people: Is
     going after the closest item first a good strategy? Here, we show that
     this is in fact a legitimate strategy which performs on average only
@@ -10,12 +11,8 @@ abstract: |
     measure distance by eye, the performance only goes down to
     16% of the optimal solution.**
     
-author: - 'Andrej Gajduk - email andrej at gajduk.com
-
----
 
 ##1 INTRODUCTION
-============
 
 The traveling salesman problem (TSP) is a well known NP-hard problem. It
 asks the following question: *How can a traveling salesman visit all of
@@ -58,7 +55,6 @@ solution in realistic scenarios. The algorithm is outlined in
 
 <a id="sec2"/>
 ##2 Algorithms
-==========
 
 The algorithm of interest in is based on the following gaming strategy:
 *Always gather the closest item to your current position*. This strategy
@@ -88,14 +84,13 @@ modification to the line 5 in the greedy algorithm
 <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/error.png" width="400px"/>
 </div>
 
-where zeta is an error term from a normal distribution
-[](https://raw.githubusercontent.com/gajduk/greedy-tsp/master/normal.PNG) with cutoffs at 0.7 and 1.3 to prevent
+where zeta is an error term from a normal distribution <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/normal.PNG" height="20px"/>
+ with cutoffs at 0.7 and 1.3 to prevent
 unreasonable errors.
 
 
 <a id="sec3"/>
 ##3 Results
-=======
 
 For illustration, the following excerpt from Far Cry 3
 ([Fig. 1](#fig1)) will be used, where one-time collectibles are marked
@@ -190,7 +185,6 @@ Figure 4. Average performance of the greedy algorithm with error compared to the
 
 <a id="sec4"/>
 ##4 Conclusion
-==========
 
 In this manuscript we looked at how a greedy algorithm compares to
 exhaustive search for a variant of the Traveling Salesman Problem, which
@@ -211,7 +205,6 @@ strategy of always going after the closest item first, are in fact
 playing close to optimally in terms of gathering collectibles.
 
 ###References
------------------
 
 1. <a id="cite1"/>Bellman, Richard. “Dynamic programming treatment of the travelling
 salesman problem.” Journal of the ACM (JACM) 9.1 (1962): 61-63.</a>
