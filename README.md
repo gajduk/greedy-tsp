@@ -1,15 +1,15 @@
 #How to efficiently gather collectibles in open world games?
 
-    Andrej Gajduk - email andrej at gajduk.com
+Andrej Gajduk - email andrej at gajduk.com
 
-    **Abstract - Since Pokemon Go sent millions on the quest of collecting virtual
-    monsters an important question has been on the minds of many people: Is
-    going after the closest item first a good strategy? Here, we show that
-    this is in fact a legitimate strategy which performs on average only
-    7\% worse than the best possible solution. Even when
-    accounting for errors due to the inability of people to accurately
-    measure distance by eye, the performance only goes down to
-    16% of the optimal solution.**
+**Abstract - Since Pokemon Go sent millions on the quest of collecting virtual
+monsters an important question has been on the minds of many people: Is
+going after the closest item first a good strategy? Here, we show that
+this is in fact a legitimate strategy which performs on average only
+7\% worse than the best possible solution. Even when
+accounting for errors due to the inability of people to accurately
+measure distance by eye, the performance only goes down to
+16% of the optimal solution.**
     
 
 ##1 INTRODUCTION
@@ -84,7 +84,7 @@ modification to the line 5 in the greedy algorithm
 <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/error.png" width="400px"/>
 </div>
 
-where zeta is an error term from a normal distribution <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/normal.PNG" height="20px"/>
+where zeta is an error term from a normal distribution <img align="top" src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/normal.PNG" height="20px"/>
  with cutoffs at 0.7 and 1.3 to prevent
 unreasonable errors.
 
