@@ -1,7 +1,7 @@
-**How to efficiently gather collectibles in open world games?**
+#How to efficiently gather collectibles in open world games?
 ---
 abstract: |
-    **Since *Pokemon Go* sent millions on the quest of collecting virtual
+    **Since Pokemon Go sent millions on the quest of collecting virtual
     monsters an important question has been on the minds of many people: Is
     going after the closest item first a good strategy? Here, we show that
     this is in fact a legitimate strategy which performs on average only
@@ -14,7 +14,7 @@ author: - 'Andrej Gajduk - email andrej at gajduk.com
 
 ---
 
-1 INTRODUCTION
+##1 INTRODUCTION
 ============
 
 The traveling salesman problem (TSP) is a well known NP-hard problem. It
@@ -53,11 +53,11 @@ collect all the collectibles.
 
 Our goal is to see how a simple greedy algorithm compares to the optimal
 solution in realistic scenarios. The algorithm is outlined in
-[Section 2](#algorithms) and our finding related to its performance in
-[Section 3](#results). [Section 4](#conclusion) concludes this manuscript.
+[Section 2](#sec2) and our finding related to its performance in
+[Section 3](#sec3). [Section 4](#sec3) concludes this manuscript.
 
-
-2 Algorithms
+<a id="sec2"/>
+##2 Algorithms
 ==========
 
 The algorithm of interest in is based on the following gaming strategy:
@@ -69,9 +69,10 @@ To find the optimal solution we used an algorithm based on exhaustive
 search. It considers all possible permutations of the collectibles, and
 is thus guaranteed to find the optimal solution. Because the number of
 permutations is proportional to the factorial of the number of
-collectibles $N!$ this algorithm works only when N <= 13. The
+collectibles N! this algorithm works only when N <= 13. The
 **greedy** algorithm works as follows:
 
+<img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/alg.PNG" width="400px"/>
 
 where *C* is a set of the positions of all the collectibles, and *dist*
 is a function which determines the Euclidean distance between two
@@ -83,15 +84,21 @@ has to guestimate it, which may result in errors. To capture this, we
 propose the **greedy with error** algorithm which includes the following
 modification to the line 5 in the greedy algorithm
 
-where Zeta is an error term from a normal distribution
-$\mathcal{N}(1,\sigma)$ with cutoffs at $0.7$ and $1.3$ to prevent
+<div align="center">
+<img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/error.png" width="400px"/>
+</div>
+
+where zeta is an error term from a normal distribution
+[](https://raw.githubusercontent.com/gajduk/greedy-tsp/master/normal.PNG) with cutoffs at 0.7 and 1.3 to prevent
 unreasonable errors.
 
-3 Results
+
+<a id="sec3"/>
+##3 Results
 =======
 
 For illustration, the following excerpt from Far Cry 3
-(Fig. [1](#fig1)) will be used, where one-time collectibles are marked
+([Fig. 1](#fig1)) will be used, where one-time collectibles are marked
 by pitchers.
 
 <div align="center">
@@ -181,7 +188,8 @@ Figure 4. Average performance of the greedy algorithm with error compared to the
 </em></p>
 </div>
 
-4 Conclusion
+<a id="sec4"/>
+##4 Conclusion
 ==========
 
 In this manuscript we looked at how a greedy algorithm compares to
@@ -202,7 +210,7 @@ Nevertheless, the results suggest that players who use the greedy
 strategy of always going after the closest item first, are in fact
 playing close to optimally in terms of gathering collectibles.
 
-References
+###References
 -----------------
 
 1. <a id="cite1"/>Bellman, Richard. “Dynamic programming treatment of the travelling
