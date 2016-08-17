@@ -1,15 +1,8 @@
-#How to efficiently gather collectibles in open world games?
+#Effectiveness of greedily collecting items in open world games
 
 Andrej Gajduk - email andrej at gajduk.com
 
-**Abstract - Since Pokemon Go sent millions on the quest of collecting virtual
-monsters an important question has been on the minds of many people: Is
-going after the closest item first a good strategy? Here, we show that
-this is in fact a legitimate strategy which performs on average only
-7\% worse than the best possible solution. Even when
-accounting for errors due to the inability of people to accurately
-measure distance by eye, the performance only goes down to
-16% of the optimal solution.**
+**Abstract - Since Pokemon Go sent millions on the quest of collecting virtual monsters, an important question has been on the minds of many people: Is going after the closest item first a time-and-cost-effective way to play? Here, we show that this is in fact a good strategy which performs on average only 7% worse than the best possible solution in terms of the total distance traveled to gather all the items. Even when accounting for errors due to the inability of people to accurately measure distances by eye, the performance only goes down to 16% of the optimal solution.**
     
 
 ##1 INTRODUCTION
@@ -193,11 +186,11 @@ the greedy algorithm is that it can be performed by a player as he or
 she is playing, since no complex computations are required, as opposed
 to exhaustive search which can only be done by a computer. We found that
 the performance of the greedy algorithm is comparable to the optimal
-solution, with only 7.3% longer distances on average.
+solution, , with the difference depending on the number of collectibles and choice of starting position. For *N*=11 the greedy algorithm resulted in routes 7.3% longer on average. 
 
 Even when human errors in estimating the distances were included the
-greedy algorithm performed on average less than 16.9\% worse than the
-optimal solution. Our analysis was unfortunately limited by the fact
+greedy algorithm performed on average less than 16.9% worse than the
+optimal solution, depending on the level of error. Our analysis was unfortunately limited by the fact
 that finding the optimal solution is NP hard with complexity *N*!, which
 prevented us from calculating the performance for *N* > 13.
 Nevertheless, the results suggest that players who use the greedy
