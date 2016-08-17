@@ -97,17 +97,19 @@ unreasonable errors.
 =======
 
 For illustration, the following excerpt from Far Cry 3
-(Fig. 1) will be used, where one-time collectibles are marked
+(Fig. [1](#fig1)) will be used, where one-time collectibles are marked
 by pitchers.
 
-
-<div style="text-align:center;">
+<div align="center">
 
 <img src="https://raw.githubusercontent.com/gajduk/greedy-tsp/master/tiny%20map.png" width="300px"/>
 
+<p><em>
+<a id="fig1"/>
 An excerpt from the map from Far Cry 3. Pitchers denote the locations
 of collectibles
-
+</a>
+</em></p>
 </div>
 
 Not surprisingly, the performance of the greedy algorithm depends on the
