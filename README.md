@@ -1,6 +1,6 @@
 #Effectiveness of greedily collecting items in open world games
 
-Andrej Gajduk - email andrej at gajduk.com
+Andrej Gajduk - andrej at gajduk.com
 
 **Abstract - Since Pokemon Go sent millions on the quest of collecting virtual monsters, an important question has been on the minds of many people: Is going after the closest item first a time-and-cost-effective way to play? Here, we show that this is in fact a good strategy which performs on average only 7% worse than the best possible solution in terms of the total distance traveled to gather all the items. Even when accounting for errors due to the inability of people to accurately measure distances by eye, the performance only goes down to 16% of the optimal solution.**
     
